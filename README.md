@@ -9,7 +9,7 @@ Firstly, you must ensure you have Golang installed on your local device.
 
 - Clone the code to your local computer using the command
 ```bash
-
+git clone https://github.com/ButterCMS/golang-blog-tutorial.git
 ```
 - Create a `.env` file at the root directory of the project, following the example on the `.env.example`
 
