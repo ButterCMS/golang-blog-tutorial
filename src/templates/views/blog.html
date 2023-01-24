@@ -1,0 +1,53 @@
+{{ template "header.html" }}
+<main class="mx-auto">
+  <div class="w-80% tp__wrapper_flex col">
+    {{ template "crumbs.html" }}
+    <div class="tp__wrapper_blog">
+      {{ if .Error }}
+      <div class="error-wrapper"> 
+        <div class="error">
+          <div class="flex-row"> 
+            <div class="img-wrapper">
+              <img src="/p/img/warning.png" />
+            </div>
+            <div class="h1-wrapper">
+              <h1>An Error Occured</h1>
+            </div>
+          </div>
+          <br/>
+          <div class="message">
+            <h3><span> MESSAGE: </span>{{ .Error }}</h3>
+          </div>
+        </div>
+      </div>
+      {{ else }}
+      <div>
+        <div class="article_img_wrapper">
+          <img src="{{ .Post.FeaturedImage }}" alt="article-image" />
+        </div>
+        <h1>{{ .Post.Title }}</h1>
+        <div id="body" class="body"></div>
+        <script>
+          const content = "{{ .Post.Body }}";
+          document.getElementById("body").innerHTML = content;
+
+          const style = document.createElement("style");
+          style.innerHTML = `
+            div#body, div.body {
+              text-align: left;
+            }
+
+            #body figure img {
+              width: 100%;
+            }
+          `;
+
+          document.head.appendChild(style);
+        </script>
+      </div>
+
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ template "footer.html" }}
