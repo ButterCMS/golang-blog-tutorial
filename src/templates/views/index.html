@@ -1,0 +1,22 @@
+{{ template "header.html" }}
+<main class="mx-auto">
+  <div class="w-80% tp__wrapper_flex col">
+    {{ template "crumbs.html" }}
+    <div class="tp__wrapper_articles">
+      {{ range .Posts.PostList }}
+      <a
+        class="article_wrapper"
+        data-key="{{ .Slug }}"
+        href="/blog/{{ .Slug }}"
+      >
+        <div>
+          <img src="{{ .FeaturedImage }}" />
+        </div>
+        <h4>{{ .Title }}</h4>
+        <p>{{ .Published }}</p>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ template "footer.html" }}
