@@ -1,4 +1,4 @@
-# Golang-blog Tutorial
+# golang-blog-Tutorial
 How to Add a Blog to Your Golang Application in Minutes with ButterCMS
 
 ## Getting Started
